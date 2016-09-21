@@ -49,8 +49,8 @@ public class LonelyTwitterActivity extends Activity {
 				tweetList.add(newTweet);
 				adapter.notifyDataSetChanged();
 
-//				saveInFile(text, new Date(System.currentTimeMillis()));
-//				finish();
+				saveInFile();
+
 
 			}
 		});
@@ -66,19 +66,18 @@ public class LonelyTwitterActivity extends Activity {
 		oldTweetsList.setAdapter(adapter);
 	}
 
-	private String[] loadFromFile() {
+	private void loadFromFile() {
 		ArrayList<String> tweets = new ArrayList<String>();
 		try {
 			FileInputStream fis = openFileInput(FILENAME);
 			BufferedReader in = new BufferedReader(new InputStreamReader(fis));
-			String line = in.readLine();
-			while (line != null) {
-				tweets.add(line);
-				line = in.readLine();
-			}
+
+			Gson gson = new Gson();
+
 
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
+			
 			e.printStackTrace();
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
@@ -91,8 +90,15 @@ public class LonelyTwitterActivity extends Activity {
 		try {
 			FileOutputStream fos = openFileOutput(FILENAME,
 					Context.MODE_APPEND);
-			fos.write(new String(date.toString() + " | " + text)
-					.getBytes());
+
+			BufferedWriter out = new bufferedWrier(new BufferedWRiter(New OutputStreamWriter(fos));)
+
+			Gson gson = new Gson();
+			gson.toJson(tweetList, out);
+			out.flush();
+
+//			fos.write(new String(date.toString() + " | " + text)
+//					.getBytes());
 			fos.close();
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
