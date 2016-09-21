@@ -44,11 +44,13 @@
       <file leaf-file-name="LonelyTwitterActivity.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/ca/ualberta/cs/lonelytwitter/LonelyTwitterActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.64435947">
-              <caret line="79" column="12" selection-start-line="79" selection-start-column="12" selection-end-line="79" selection-end-column="12" />
+            <state vertical-scroll-proportion="0.4455645">
+              <caret line="89" column="36" selection-start-line="89" selection-start-column="36" selection-end-line="89" selection-end-column="36" />
               <folding>
-                <element signature="method#onCreate#0;class#LonelyTwitterActivity#0" expanded="false" />
-                <element signature="method#onStart#0;class#LonelyTwitterActivity#0" expanded="false" />
+                <element signature="e#920#927#0" expanded="true" />
+                <element signature="e#1357#1634#0" expanded="true" />
+                <element signature="e#1633#1634#0" expanded="true" />
+                <element signature="e#1947#1955#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -1756,7 +1758,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/ca/ualberta/cs/lonelytwitter/LonelyTwitterActivity.java</url>
-          <line>33</line>
+          <line>39</line>
           <properties />
         </line-breakpoint>
       </breakpoints>
@@ -1775,11 +1777,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/ca/ualberta/cs/lonelytwitter/LonelyTwitterActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.64435947">
-          <caret line="79" column="12" selection-start-line="79" selection-start-column="12" selection-end-line="79" selection-end-column="12" />
+        <state vertical-scroll-proportion="0.4455645">
+          <caret line="89" column="36" selection-start-line="89" selection-start-column="36" selection-end-line="89" selection-end-column="36" />
           <folding>
-            <element signature="method#onCreate#0;class#LonelyTwitterActivity#0" expanded="false" />
-            <element signature="method#onStart#0;class#LonelyTwitterActivity#0" expanded="false" />
+            <element signature="e#920#927#0" expanded="true" />
+            <element signature="e#1357#1634#0" expanded="true" />
+            <element signature="e#1633#1634#0" expanded="true" />
+            <element signature="e#1947#1955#0" expanded="true" />
           </folding>
         </state>
       </provider>

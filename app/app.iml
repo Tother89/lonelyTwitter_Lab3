@@ -81,6 +81,10 @@
     </content>
     <orderEntry type="jdk" jdkName="Android API 18 Platform" jdkType="Android SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
+<<<<<<< HEAD
     <orderEntry type="library" exported="" name="gson-2.2.4" level="project" />
+=======
+    <orderEntry type="library" exported="" name="gson-2.7" level="project" />
+>>>>>>> 9242481078847f1d5c2dd0d0f510c5b6a686bcc5
   </component>
 </module>
