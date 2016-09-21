@@ -2,6 +2,7 @@ package ca.ualberta.cs.lonelytwitter;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -42,6 +43,8 @@ public class LonelyTwitterActivity extends Activity {
 
 		bodyText = (EditText) findViewById(R.id.body);
 		Button saveButton = (Button) findViewById(R.id.save);
+		final EditText body = (EditText) findViewById(R.id.body);
+		Button clearButton = (Button) findViewById(R.id.clear);
 		oldTweetsList = (ListView) findViewById(R.id.oldTweetsList);
 
 		saveButton.setOnClickListener(new View.OnClickListener() {
@@ -53,10 +56,19 @@ public class LonelyTwitterActivity extends Activity {
 				Tweet newTweet = new NormalTweet(text);
 
 				tweetList.add(newTweet);
+				body.setText("");
 				adapter.notifyDataSetChanged();
 
 				saveInFile();
 
+			}
+		});
+		clearButton.setOnClickListener(new View.OnClickListener(){
+			public void onClick(View v){
+				tweetList.clear();
+				deleteFile(FILENAME);
+				File newFile = new File(FILENAME);
+				adapter.notifyDataSetChanged();
 			}
 		});
 	}
@@ -72,24 +84,22 @@ public class LonelyTwitterActivity extends Activity {
 	}
 
 	private void loadFromFile() {
-
-		ArrayList<String> tweets = new ArrayList<String>();
 		try {
 			FileInputStream fis = openFileInput(FILENAME);
 			BufferedReader in = new BufferedReader(new InputStreamReader(fis));
 
 			Gson gson = new Gson();
 
-
-		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
-			
 			// Code from http://stackoverflow.com/questions/12384064/gson-convert-from-json-to-a-typed-arraylistt
 			Type listType = new TypeToken<ArrayList<NormalTweet>>(){}.getType();
 
-			tweetList = Gson.fromJson(in,listType);
+			tweetList = gson.fromJson(in,listType);
 
-		}  catch (IOException e) {
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			tweetList = new ArrayList<Tweet>();
+
+		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			throw new RuntimeException();
 		}
