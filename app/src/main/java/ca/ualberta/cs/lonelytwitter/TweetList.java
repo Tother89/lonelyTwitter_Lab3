@@ -19,4 +19,8 @@ public class TweetList {
     public Tweet getTweet(int i) {
         return tweets.get(i);
     }
+
+    public void delete(Tweet a) {
+        tweets.remove(a);
+    }
 }
