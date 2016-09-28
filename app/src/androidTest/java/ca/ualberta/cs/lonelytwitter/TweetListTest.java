@@ -17,7 +17,7 @@ public class TweetListTest extends ActivityInstrumentationTestCase2<LonelyTwitte
         TweetList list = new TweetList();
 
         Tweet tweet = new NormalTweet("Hello!");
-        list.add(tweet);
+        list.addTweet(tweet);
         assertTrue(list.hasTweet(tweet));
     }
     public void testHasTweet(){
@@ -26,7 +26,7 @@ public class TweetListTest extends ActivityInstrumentationTestCase2<LonelyTwitte
         Tweet tweet = new NormalTweet("Hello!");
 
         assertFalse(list.hasTweet(tweet));
-        list.add(tweet);
+        list.addTweet(tweet);
         assertTrue(list.hasTweet(tweet));
     }
     public void testGetTweet(){
@@ -35,8 +35,8 @@ public class TweetListTest extends ActivityInstrumentationTestCase2<LonelyTwitte
         Tweet a = new NormalTweet("Hello!");
         Tweet b = new NormalTweet("Hi!");
 
-        list.add(a);
-        list.add(b);
+        list.addTweet(a);
+        list.addTweet(b);
 
         assertEquals(a, list.getTweet(0));
         assertEquals(b, list.getTweet(1));
@@ -49,9 +49,9 @@ public class TweetListTest extends ActivityInstrumentationTestCase2<LonelyTwitte
         Tweet b = new NormalTweet("Hey!");
         Tweet c = new NormalTweet("Howdy!");
 
-        list.add(a);
-        list.add(b);
-        list.add(c);
+        list.addTweet(a);
+        list.addTweet(b);
+        list.addTweet(c);
         List<Tweet> nList = list.getTweets();
         assertEquals(a, nList.get(0));
         assertEquals(b,nList.get(1));
@@ -62,9 +62,9 @@ public class TweetListTest extends ActivityInstrumentationTestCase2<LonelyTwitte
         TweetList list = new TweetList();
 
         Tweet a = new NormalTweet("Hello!");
-        list.add(a);
+        list.addTweet(a);
         assertTrue(list.hasTweet(a));
-        list.delete(a);
+        list.deleteTweet(a);
         assertFalse(list.hasTweet(a));
     }
 
@@ -75,9 +75,9 @@ public class TweetListTest extends ActivityInstrumentationTestCase2<LonelyTwitte
         Tweet b = new NormalTweet("Hey!");
         Tweet c = new NormalTweet("Howdy!");
 
-        list.add(a);
-        list.add(b);
-        list.add(c);
+        list.addTweet(a);
+        list.addTweet(b);
+        list.addTweet(c);
 
         assertEquals(3, list.getCount());
     }

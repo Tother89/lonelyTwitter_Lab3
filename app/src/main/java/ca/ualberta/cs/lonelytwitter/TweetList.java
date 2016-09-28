@@ -8,7 +8,7 @@ import java.util.List;
  */
 public class TweetList {
     List<Tweet> tweets = new ArrayList<Tweet>();
-    public void add(Tweet tweet) {
+    public void addTweet(Tweet tweet) {
 
             if (tweets.contains(tweet)) {
                 throw new IllegalArgumentException();
@@ -26,7 +26,7 @@ public class TweetList {
         return tweets.get(i);
     }
 
-    public void delete(Tweet a) {
+    public void deleteTweet(Tweet a) {
 
         tweets.remove(a);
     }
