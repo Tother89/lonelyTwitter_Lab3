@@ -25,6 +25,23 @@ import android.widget.ListView;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
+/**
+ * The type Lonely twitter activity.
+ * THis is the main view class of LonelyTwitter project, <p> I  handles all
+ * user interactions well as file manipulations. </p>
+ * <pre>All the files are stored in the form of "json" files stored in Emulator,
+ * accessible from Android Device Monitor. </pre>
+ * <ol>
+ * <li>an item</li>
+ * </ol>
+ * @since 1.0
+ * @see NormalTweet
+ * @see Tweet
+ * @see java.io.FileNotFoundException
+ * @austhor Dallin Toth
+ * @deprecated
+ *
+ */
 public class LonelyTwitterActivity extends Activity {
 
 	private static final String FILENAME = "file.sav";
